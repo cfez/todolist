@@ -1,0 +1,297 @@
+body{
+    box-sizing: border-box;
+    font-size: 13px;
+    font-family: var(--font-family-regular)
+}
+#header {
+    width: 100%;
+    height: 40px;
+    background-color: #db4c3f;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
+    
+}
+
+#firstHeader{
+    margin-left:20px;
+    
+    grid-column-start: 1;
+    grid-column-end: 6;
+    
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+#firstHeader button{
+    margin-right: 10px;
+
+}
+
+#secondHeader{
+    grid-column-start: 11;
+    
+    padding-top: 2px;
+}
+
+
+
+.headbutton{
+    border:none;
+    background-color:#db4c3f; 
+}
+.headbutton:hover{
+    background-color: #e27065;
+}
+
+
+.bodyContainer{
+   
+    
+    display: flex;
+    
+}
+
+.svgHeader{
+    color: white;
+}
+
+#leftMenu{
+    width: 0;
+   /* padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 10px;*/
+    height: calc(100vh - 44px);;
+   /* display: none;*/
+   overflow-x: hidden;
+    /*border: 1px solid yellow;*/
+    background-color: rgb(250 250 250);
+    transition: 0.5s;
+}
+#leftMenu_second{
+    width: 250px;
+    margin: 20px;
+}
+#leftMenu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#leftMenu ul li{
+    /*border: 1px solid black;*/
+    padding-top: 10px;
+}
+#leftMenu ul li a{
+    
+    /*border: 1px solid red;*/
+    margin-top: 10px;
+}
+#leftMenu ul li a span svg{
+    color: blue;
+}
+
+
+
+#closesign{
+    display: none;
+}
+.search_icon{
+    position: absolute;
+    top: 10%;
+    left: 5px;
+    
+}
+.search-butt input{
+    border:none;
+    background-color: rgb(215 155 155 / 20%);
+    position: relative;
+    border-radius: 3px;
+    height: 30px;
+    width: 100%;
+}
+.search-butt input:focus{
+    background-color: white;
+    width: 300px;
+    outline: none;
+}
+
+.search-butt{
+    border:none;
+    border-radius: 3px;
+    background-color: rgb(215 155 155 / 20%);
+    height: 30px;
+    width: 218px;
+    position: relative;
+}
+.search-butt:hover{
+    background-color: #ffff;
+    
+}
+
+
+
+#bodyContainerOverlay{
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+    display: none;
+    position: fixed;
+    background-color: rgba(0,0,0,.5);
+    
+}
+
+
+@media only screen and (max-width: 768px){
+    .search-butt {
+        width: calc(100vw - 366px);
+    }
+    #leftMenu{
+        position: fixed;
+    }
+    #bodyContainerOverlay{
+        display: block;
+        visibility: hidden;
+    }
+    
+}
+
+#second_leftMenu{
+    margin-top: 30px;
+}
+.project{
+    flex-grow: 2;
+}
+#projectHeader{
+    display: flex;
+}
+#plusSign{
+    border: none;
+    margin-right: 10px;
+    
+}
+#arrowDownSign{
+    border: none;
+    
+    
+}
+.Sign_svg{
+    background-color: none;
+}
+
+
+.container{
+    padding-top: 20px;
+    
+    /*border: 1px solid green;*/
+}
+#containerBody{
+    max-width: 800px;
+    margin: auto;
+   /* border: 1px solid red;*/
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.second_leftMenu, .project, .leftMenu_link{
+    font-family: var(--font-family-regular);
+    font-size: 13px;
+    text-decoration: none;
+    color: #202020;
+}
+
+#project_link{
+    text-decoration: none;
+    color: rgb(87, 83, 83);
+}
+
+.hoverable{
+    cursor: pointer;
+}
+
+.hoverable:hover{
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+#project_list{
+    display: block;
+    
+}
+
+.itemsOnList{
+    display: flex;
+    margin-top: 10px;
+}
+.bold{
+    flex-grow: 2;
+
+}
+.itemsOnList button{
+    border: none;
+    background-color: none;
+    font-size: small;
+    margin-right: 10px;
+}
+.close-button{
+    margin-right: 10px;
+}
+#svg-button-close{
+     
+}
+
+#add_button{
+    border-radius: 10%;
+    margin: 5px;
+    
+}
+#theta{
+    border-top: 1px solid rgb(238, 236, 236);
+    margin-top: 30px;
+    list-style-type: none;
+}
+
+
+#user-input-cover{
+    display: flex;
+}
+.circle-button{
+    display: flex;
+    margin: 8px 6px 0 -3px;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+.circle-button div{
+    border: 2px solid black;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    
+}
+.circle-button div svg{
+    color: white;
+}
+.circle-button div svg:hover{
+    color: black;
+}
+.user-input-circle-svg{
+    margin-left: -8px;
+    /*border: 1px solid red;*/
+    margin-top: -19px;
+    height: 16px;
+    width: 16px;
+}
+.input-value{
+    flex: 1;
+   /* border: 1px solid black;*/
+    padding: 8px 0;
+    margin-right: 30px;
+    min-width: 100px;
+}
+.user-input-list{
+    border-bottom: 1px solid var(--task-divider);
+}
