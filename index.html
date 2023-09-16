@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>To-do list</title>
+
+    
+    <link rel="stylesheet" href="./assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="index.css" />
+
+
+
+    <link rel="stylesheet"
+        href="https://d3ptyyxy2at9ui.cloudfront.net/assets/vendor~add~app~authentication~253ae210.c6c32b8d70ae0cf4695abdae99e80c3b.css?l=src">
+    <link rel="stylesheet"
+        href="https://d3ptyyxy2at9ui.cloudfront.net/assets/vendor~add~app~253ae210.ccbb86e665c1710011b7a77dcaefc62f.css?l=src">
+    <link rel="stylesheet"
+        href="https://d3ptyyxy2at9ui.cloudfront.net/assets/app~d0ae3f07.c2c1a7e70c4a1e09e0d8460abb03d7ee.css?l=src">
+    <link rel="stylesheet"
+        href="https://d3ptyyxy2at9ui.cloudfront.net/assets/app~5a11b65b.953c24387cdee19c95d437d4d0de78c2.css?l=src">
+    <link rel="stylesheet"
+        href="https://d3ptyyxy2at9ui.cloudfront.net/assets/app~c714bc7b.22fe31305304e289926915bc518ab4b1.css?l=src">
+    <link rel="stylesheet"
+        href="https://d3ptyyxy2at9ui.cloudfront.net/assets/app~ecb123f3.5f2b2498f10789030e23d0ee0f770bc7.css?l=src">
+    <link rel="stylesheet"
+        href="https://d3ptyyxy2at9ui.cloudfront.net/assets/app~060beeb2.420819e4e0ff190ad19efba27e2dd2e9.css?l=src">
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+</head>
+
+<body onload="todoList()">
+    <div>
+        <div id="header">
+            <div class="contain" id="firstHeader">
+                <button class="headbutton" onclick="toggabledevice()">
+                    <svg viewBox="0 0 24 24" class="close_icon svgHeader" width="24" height="24" id="closesign">
+                        <path fill="currentColor" fill-rule="nonzero"
+                            d="M5.146 5.146a.5.5 0 0 1 .708 0L12 11.293l6.146-6.147a.5.5 0 0 1 .638-.057l.07.057a.5.5 0 0 1 0 .708L12.707 12l6.147 6.146a.5.5 0 0 1 .057.638l-.057.07a.5.5 0 0 1-.708 0L12 12.707l-6.146 6.147a.5.5 0 0 1-.638.057l-.07-.057a.5.5 0 0 1 0-.708L11.293 12 5.146 5.854a.5.5 0 0 1-.057-.638z">
+                        </path>
+                    </svg>
+                    <svg class="menu_icon svgHeader" width="24" height="24" viewBox="0 0 24 24" id="menu_icons">
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M4.5 5h15a.5.5 0 1 1 0 1h-15a.5.5 0 0 1 0-1zm0 6h15a.5.5 0 1 1 0 1h-15a.5.5 0 1 1 0-1zm0 6h15a.5.5 0 1 1 0 1h-15a.5.5 0 1 1 0-1z">
+                        </path>
+                    </svg>
+                </button>
+                <button class="headbutton">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                        class="svgHeader">
+                        <path fill="currentColor"
+                            d="M12.527 3.075c.35.104.64.263 1.27.876L19.1 9.123c.374.364.49.505.601.678.11.174.185.351.232.552.042.178.062.34.066.742L20 17.718c0 .446-.046.607-.134.77a.906.906 0 01-.378.378c-.163.088-.324.134-.77.134H14v-4.718c0-.446-.046-.607-.134-.77a.906.906 0 00-.378-.378c-.142-.077-.284-.122-.616-.132L12.718 13h-1.436c-.446 0-.607.046-.77.134a.906.906 0 00-.378.378c-.077.142-.122.284-.132.616l-.002.154V19H5.282c-.446 0-.607-.046-.77-.134a.906.906 0 01-.378-.378c-.088-.163-.134-.324-.134-.77v-6.462c0-.522.02-.703.067-.903.047-.2.121-.378.232-.552l.077-.113c.098-.134.233-.282.524-.565l5.304-5.172c.629-.613.92-.772 1.269-.876a1.82 1.82 0 011.054 0zm-.286.958a.825.825 0 00-.482 0c-.18.054-.326.139-.63.418l-.227.216L5.598 9.84c-.3.293-.385.39-.456.5a.76.76 0 00-.102.242c-.026.112-.037.224-.04.531l.002 6.807.005.073.074.006L8.999 18 9 14.268l.003-.17c.013-.448.083-.749.249-1.058a1.9 1.9 0 01.788-.788c.306-.164.6-.234 1.043-.249l.199-.003h1.45l.17.003c.448.013.749.083 1.058.249.337.18.608.45.788.788.164.306.234.6.249 1.043l.003.199L14.999 18l3.92-.002.073-.006.006-.073.002-.2v-6.615l-.005-.218a1.494 1.494 0 00-.035-.305.747.747 0 00-.102-.242l-.059-.084a3.571 3.571 0 00-.294-.315l-5.407-5.273c-.425-.414-.604-.545-.798-.615l-.06-.019z">
+                        </path>
+                    </svg>
+                </button>
+
+                <div class="search-butt">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true"
+                        class="search_icon svgHeader">
+                        <path
+                            d="M10.5 3a7.5 7.5 0 015.645 12.438l4.709 4.708a.502.502 0 01-.708.708l-4.708-4.709A7.5 7.5 0 1110.5 3zm0 1a6.5 6.5 0 100 13 6.5 6.5 0 000-13z"
+                            fill="currentColor"></path>
+                    </svg>
+                    <input type="text" />
+                </div>
+            </div>
+            <div class="contain" id="secondHeader">
+                <button class="headbutton">
+                    <svg width="24" height="24" viewBox="0 0 24 24" class="svgHeader">
+                        <g fill="none" fill-rule="evenodd" transform="translate(4 3)">
+                            <mask id="jd4FBg" fill="#fff">
+                                <path
+                                    d="M9 8h7a.5.5 0 1 1 0 1H9v7a.5.5 0 1 1-1 0V9H1a.5.5 0 0 1 0-1h7V1a.5.5 0 0 1 1 0v7z">
+                                </path>
+                            </mask>
+                            <g mask="url(#jd4FBg)">
+                                <path fill="currentColor" d="M-4-3h24v24H-4z"></path>
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+                <button class="headbutton">
+                    <svg viewBox="-2 -2 4 4" style="transform: rotate(-90deg); width: 24px; height: 24px;"
+                        class="svgHeader">
+                        <circle cx="0" cy="0" r="1.4" fill="none" visibility="visible" stroke="currentColor"
+                            stroke-width="0.2">
+                        </circle>
+                        <path fill="currentColor" d="M 1 0 A 1 1 0 1 1 0.30901699437494723 -0.9510565162951536 L 0 0">
+                        </path>
+                    </svg>
+                </button>
+                <button class="headbutton">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        aria-hidden="true" class="svgHeader">
+                        <path
+                            d="M12 3a9 9 0 11-.001 18.001A9 9 0 0112 3zm0 1a8 8 0 100 16 8 8 0 000-16zm-.093 10.794c.47 0 .802.355.802.856 0 .495-.331.85-.802.85-.471 0-.808-.355-.808-.85 0-.501.337-.856.808-.856zm.128-7.294c1.465 0 2.465.954 2.465 2.213 0 .96-.47 1.639-1.215 2.11-.738.458-.948.8-.948 1.443v.397H11.32v-.562c-.006-.808.366-1.358 1.163-1.86.674-.433.936-.818.936-1.473 0-.758-.559-1.314-1.425-1.314-.878 0-1.436.544-1.5 1.418H9.5c.064-1.32.901-2.372 2.535-2.372z"
+                            fill="currentColor" fill-rule="nonzero"></path>
+                    </svg>
+                </button>
+                <button class="headbutton">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        class="svgHeader">
+                        <path
+                            d="M12 3a5.75 5.75 0 015.75 5.75c0 3.24.682 5.875 2.03 7.927A1.5 1.5 0 0118.525 19H14.5a2.5 2.5 0 01-5 0H5.475a1.501 1.501 0 01-1.254-2.323C5.568 14.625 6.25 11.989 6.25 8.75A5.75 5.75 0 0112 3zm1.5 16h-3a1.5 1.5 0 003 0zM12 4a4.75 4.75 0 00-4.75 4.75c0 3.423-.731 6.248-2.193 8.476a.5.5 0 00.418.774h13.05a.5.5 0 00.418-.774c-1.462-2.227-2.193-5.053-2.193-8.476A4.75 4.75 0 0012 4z"
+                            fill="currentColor" fill-rule="nonzero"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+
+
+        <div class="bodyContainer">
+            <div id="bodyContainerOverlay"></div>
+            <div id="leftMenu">
+                <div id="leftMenu_second">
+                    <div id="first_leftMenu">
+                        <ul>
+
+                            <li class="hoverable">
+
+
+                                <a href="#" class="leftMenu_link">
+                                    <span>
+                                        <svg width="24" height="24" viewBox="0 0 24 24"
+                                            class="Dd3PmF2g5h93YIf1bCDdiA==">
+                                            <g fill="currentColor" fill-rule="nonzero">
+                                                <path
+                                                    d="M10 14.5a2 2 0 104 0h5.5V18a1.5 1.5 0 01-1.5 1.5H6A1.5 1.5 0 014.5 18v-3.5H10z"
+                                                    opacity="0.1">
+                                                </path>
+                                                <path
+                                                    d="M8.062 4h7.876a2 2 0 011.94 1.515l2.062 8.246a2 2 0 01.06.485V18a2 2 0 01-2 2H6a2 2 0 01-2-2v-3.754a2 2 0 01.06-.485l2.06-8.246A2 2 0 018.061 4zm0 1a1 1 0 00-.97.757L5.03 14.004a1 1 0 00-.03.242V18a1 1 0 001 1h12a1 1 0 001-1v-3.754a1 1 0 00-.03-.242l-2.06-8.247A1 1 0 0015.94 5H8.061zM12 17.25A2.75 2.75 0 019.295 15H7a.5.5 0 110-1h2.75a.5.5 0 01.5.5 1.75 1.75 0 003.5 0 .5.5 0 01.5-.5H17a.5.5 0 110 1h-2.295A2.75 2.75 0 0112 17.25z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span>
+                                        Inbox
+                                    </span>
+                                </a>
+
+
+                            </li>
+
+                            <li class="hoverable">
+                                <a href="#" class="leftMenu_link">
+                                    <span>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" class="ONBJEQtK++jnfUWJ3V90Dw=="
+                                            style="color:#058527;">
+                                            <g fill="currentColor" fill-rule="evenodd">
+                                                <path fill-rule="nonzero"
+                                                    d="M6 4.5h12A1.5 1.5 0 0 1 19.5 6v2.5h-15V6A1.5 1.5 0 0 1 6 4.5z"
+                                                    opacity=".1">
+                                                </path>
+                                                <path fill-rule="nonzero"
+                                                    d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H6zm1 3h10a.5.5 0 1 1 0 1H7a.5.5 0 0 1 0-1z">
+                                                </path><text
+                                                    font-family="-apple-system, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'"
+                                                    font-size="9" transform="translate(4 2)" font-weight="500">
+                                                    <tspan x="8" y="15" text-anchor="middle">26</tspan>
+                                                </text>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span>
+                                        Today
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="hoverable">
+                                <a href="#" class="leftMenu_link">
+                                    <span>
+                                        <svg width="24" height="24" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg" style="color:#692fc2;"
+                                            class="SWWJ2mDmoJ5jpYGsCY5nBA==">
+                                            <g fill="currentColor" fill-rule="nonzero">
+                                                <path d="M6 4.5h12A1.5 1.5 0 0119.5 6v2.5h-15V6A1.5 1.5 0 016 4.5z"
+                                                    opacity="0.1">
+                                                </path>
+                                                <path
+                                                    d="M6 4h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2zm0 1a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V6a1 1 0 00-1-1H6zm10 12a1 1 0 110-2 1 1 0 010 2zm-4 0a1 1 0 110-2 1 1 0 010 2zm-4 0a1 1 0 110-2 1 1 0 010 2zm8-4a1 1 0 110-2 1 1 0 010 2zm-4 0a1 1 0 110-2 1 1 0 010 2zm-4 0a1 1 0 110-2 1 1 0 010 2zM7 8h10a.5.5 0 110 1H7a.5.5 0 010-1z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span>
+                                        Upcoming
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="hoverable">
+                                <a href="#" class="leftMenu_link">
+                                    <span>
+                                        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                            style="color:#eb8909" class="yeJ7DFSh0CB61w0UHm64kQ==">
+                                            <path opacity="0.1" fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M13 6.5A1.5 1.5 0 0114.5 5h3A1.5 1.5 0 0119 6.5v3a1.5 1.5 0 01-1.5 1.5h-3A1.5 1.5 0 0113 9.5v-3zM6.5 13A1.5 1.5 0 005 14.5v3A1.5 1.5 0 006.5 19h3a1.5 1.5 0 001.5-1.5v-3A1.5 1.5 0 009.5 13h-3zm8 0a1.5 1.5 0 00-1.5 1.5v3a1.5 1.5 0 001.5 1.5h3a1.5 1.5 0 001.5-1.5v-3a1.5 1.5 0 00-1.5-1.5h-3zm-8-8A1.5 1.5 0 005 6.5v3A1.5 1.5 0 006.5 11h3A1.5 1.5 0 0011 9.5v-3A1.5 1.5 0 009.5 5h-3z"
+                                                fill="currentColor"></path>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M17.5 6h-3a.5.5 0 00-.5.5v3a.5.5 0 00.5.5h3a.5.5 0 00.5-.5v-3a.5.5 0 00-.5-.5zm-3-1A1.5 1.5 0 0013 6.5v3a1.5 1.5 0 001.5 1.5h3A1.5 1.5 0 0019 9.5v-3A1.5 1.5 0 0017.5 5h-3zm-8 9h3a.5.5 0 01.5.5v3a.5.5 0 01-.5.5h-3a.5.5 0 01-.5-.5v-3a.5.5 0 01.5-.5zm-1.5.5A1.5 1.5 0 016.5 13h3a1.5 1.5 0 011.5 1.5v3A1.5 1.5 0 019.5 19h-3A1.5 1.5 0 015 17.5v-3zm9.5-.5h3a.5.5 0 01.5.5v3a.5.5 0 01-.5.5h-3a.5.5 0 01-.5-.5v-3a.5.5 0 01.5-.5zm-1.5.5a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5v3a1.5 1.5 0 01-1.5 1.5h-3a1.5 1.5 0 01-1.5-1.5v-3zM6.5 6h3a.5.5 0 01.5.5v3a.5.5 0 01-.5.5h-3a.5.5 0 01-.5-.5v-3a.5.5 0 01.5-.5zM5 6.5A1.5 1.5 0 016.5 5h3A1.5 1.5 0 0111 6.5v3A1.5 1.5 0 019.5 11h-3A1.5 1.5 0 015 9.5v-3z"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </span>
+                                    <span>
+                                        Filters & Labels
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="second_leftMenu">
+                        <div>
+                            <div id="projectHeader" class="hoverable">
+                                <div class="project">
+                                    <a href="#" id="project_link">Project</a>
+                                </div>
+                                <div id="plusSignCover">
+                                    <button id="plusSign">
+                                        <svg width="13" height="13" class="Sign_svg">
+                                            <path
+                                                d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z"
+                                                fill="currentColor" fill-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div id="arrowDSCover">
+                                    <button id="arrowDownSign" class="Sign_svg" onclick="arrowToggable()">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" class="aqv2kvH">
+                                            <path
+                                                d="M14 5.758L13.156 5 7.992 9.506l-.55-.48.002.002-4.588-4.003L2 5.77 7.992 11 14 5.758"
+                                                fill="currentColor">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="project_list">
+                            <ul>
+                                <li class="hoverable">
+                                    <div>
+                                        <a href="#" class="second_leftMenu" onclick="project(event, 'Personal');">
+                                            <span>
+                                                <svg width="24" height="24" viewBox="0 0 24 24" class="project_icon"
+                                                    style="color: rgb(184, 184, 184);">
+                                                    <path d="M12 7a5 5 0 110 10 5 5 0 010-10z" fill="currentColor">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                            <span>
+                                                Personal
+                                            </span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="hoverable">
+                                    <div>
+                                        <a href="#" class="second_leftMenu" onclick="project(event, 'Education');">
+                                            <span>
+                                                <svg width="24" height="24" viewBox="0 0 24 24" class="project_icon"
+                                                    style="color: rgb(184, 184, 184);">
+                                                    <path d="M12 7a5 5 0 110 10 5 5 0 010-10z" fill="currentColor">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                            <span>
+                                                Education
+                                            </span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="hoverable">
+                                    <div>
+                                        <a href="#" class="second_leftMenu" onclick="project(event, 'Work');">
+                                            <span>
+                                                <svg width="24" height="24" viewBox="0 0 24 24" class="project_icon"
+                                                    style="color: rgb(184, 184, 184);">
+                                                    <path d="M12 7a5 5 0 110 10 5 5 0 010-10z" fill="currentColor">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                            <span>
+                                                Work
+                                            </span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="container">
+                <div id="containerBody">
+                    <h1>My first todo list</h1>
+                    <form class="todo-form">
+                        <div class="row g-3 align-items-center">
+                            <div class="col-auto">
+                                
+                                <input type="text" class="form-control form-control-sm todo-input" id="toDoValue" onkeypress="keyboardSaveToLocalStorage(event)"/>
+                                <div class="btn-group">
+                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Dropdown button
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-item">
+                                            <input type="radio" class="form-check-input" name="category" value="Personal" id="pers" />
+                                            <label for="pers" class="form-check-label">Personal</label><br>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <input type="radio" class="form-check-input" name="category" value="Education" id="edu" />
+                                            <label for="edu" class="form-check-label">Education</label><br>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <input type="radio" class="form-check-input" name="category" value="Work" id="work" />
+                                            <label for="work" class="form-check-label">Work</label><br>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button type="button" class="add-button " id="add_button"
+                                    onclick="saveToLocalStorage()" >
+                                    Add Task
+                                </button>
+
+                            </div>
+                        </div>
+                    </form>
+                    <ul id="theta" class="todo-items">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="todolist.js"></script>
+</body>
+
+
+
+
+
+  </html >
